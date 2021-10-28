@@ -27,30 +27,27 @@ public class KyselyApplication {
 			inqRepo.save(inquiry);
 			
 			Question question = new Question();
+			question.setInquiry(inquiry);
+			question.setQuest("Vastaahan tähän kysymykseen...");
 			quesRepo.save(question);
 			
-			inquiry.getQuestions().add(question);
-			inqRepo.save(inquiry);
-			
 			Answer ans1 = new Answer();
-			ans1.setAnswer("Ensimmäinen vastaus");
+			ans1.setAnswer("Ensimmäinen kysymys");
+			ans1.setQuestion(question);
 			ans1.setValue(1);
 			ansRepo.save(ans1);
 			
 			Answer ans2 = new Answer();
-			ans2.setAnswer("Toinen vastaus");
+			ans2.setAnswer("Toinen kysymys");
+			ans2.setQuestion(question);
 			ans2.setValue(3);
 			ansRepo.save(ans2);
 			
 			Answer ans3 = new Answer();
-			ans3.setAnswer("Kolmas vastaus");
+			ans3.setAnswer("Kolmas kysymys");
+			ans3.setQuestion(question);
 			ans3.setValue(5);
 			ansRepo.save(ans3);
-			
-			question.getAnswers().add(ans1);
-			question.getAnswers().add(ans3);
-			question.getAnswers().add(ans2);
-			quesRepo.save(question);
 			
 		};
 
