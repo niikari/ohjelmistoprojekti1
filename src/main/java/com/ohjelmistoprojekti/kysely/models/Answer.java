@@ -1,10 +1,16 @@
 package com.ohjelmistoprojekti.kysely.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,5 +34,9 @@ public class Answer {
 	
 	@ManyToOne
 	private Question question;
+	
+	@JsonIgnore
+	@ManyToMany(mappedBy="answers")
+	private List<Maker> makers = new ArrayList<>();
 
 }

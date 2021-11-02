@@ -29,7 +29,4 @@ public class Inquiry {
 	@OneToMany(mappedBy="inquiry")
 	private List<Question> questions = new ArrayList<>();
 	
-	@JsonIgnore
-	@OneToMany(mappedBy="inquiry")
-	private List<Maker> makers = new ArrayList<>();
 }

@@ -32,19 +32,19 @@ public class KyselyApplication {
 			quesRepo.save(question);
 			
 			Answer ans1 = new Answer();
-			ans1.setAnswer("Ensimmäinen kysymys");
+			ans1.setAnswer("Ensimmäinen vastaus");
 			ans1.setQuestion(question);
 			ans1.setValue(1);
 			ansRepo.save(ans1);
 			
 			Answer ans2 = new Answer();
-			ans2.setAnswer("Toinen kysymys");
+			ans2.setAnswer("Toinen vastaus");
 			ans2.setQuestion(question);
 			ans2.setValue(3);
 			ansRepo.save(ans2);
 			
 			Answer ans3 = new Answer();
-			ans3.setAnswer("Kolmas kysymys");
+			ans3.setAnswer("Kolmas vastaus");
 			ans3.setQuestion(question);
 			ans3.setValue(5);
 			ansRepo.save(ans3);

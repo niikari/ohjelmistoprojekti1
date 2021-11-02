@@ -29,7 +29,8 @@ public class Question {
 	private String quest;
 	
 	private Boolean multipleAnswers = false;
-	private Boolean radioQuestion = true;
+	private Boolean openQuestion = false;
+	private Boolean normQuestion = true;
 	
 	@ManyToOne
 	private Inquiry inquiry;
