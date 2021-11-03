@@ -86,6 +86,31 @@ public class KyselyApplication {
 			ans7.setQuestion(question3);
 			ansRepo.save(ans7);
 			
+			Question question4 = new Question();
+			question4.setInquiry(inquiry);
+			question4.setQuest("Vastaahan tähän kolmanteen, useampi vaihtoehto ok");
+			question4.setNormQuestion(false);
+			question4.setMultipleAnswers(true);
+			quesRepo.save(question4);
+			
+			Answer ans8 = new Answer();
+			ans8.setAnswer("Kolmannen kysymyksen ensimmäinen vastaus");
+			ans8.setQuestion(question4);
+			ans8.setValue(1);
+			ansRepo.save(ans8);
+			
+			Answer ans9 = new Answer();
+			ans9.setAnswer("Kolmannen kysymyksen toinen vastaus");
+			ans9.setQuestion(question4);
+			ans9.setValue(3);
+			ansRepo.save(ans9);
+			
+			Answer ans10 = new Answer();
+			ans10.setAnswer("Kolmannen kysymyksen kolmas vastaus");
+			ans10.setQuestion(question4);
+			ans10.setValue(5);
+			ansRepo.save(ans10);
+			
 		};
 
 	}
