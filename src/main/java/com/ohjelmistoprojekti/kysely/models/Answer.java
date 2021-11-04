@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,6 +33,7 @@ public class Answer {
 	@ManyToOne
 	private Question question;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="answer")
 	private List<MakerAnswer> makerAnswers = new ArrayList<>();
 }
