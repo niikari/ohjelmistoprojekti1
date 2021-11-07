@@ -14,4 +14,7 @@ public interface MakerAnswerRepository extends CrudRepository<MakerAnswer, Long>
 
 	// FETCH FROM SPECIFIC USER
 	List<MakerAnswer> findByMaker(@Param("maker") Maker maker);
+	
+	// FETCH EVERYTHING EXCEPT SPECIFIC USER
+	List<MakerAnswer> findByMakerIsNot(@Param("maker") Maker maker);
 }
