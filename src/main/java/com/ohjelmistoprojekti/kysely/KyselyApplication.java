@@ -27,6 +27,7 @@ public class KyselyApplication {
 		return (args) -> {
 						
 			Inquiry inquiry = new Inquiry();
+			inquiry.setName("Ensimmäinen kysely");
 			inqRepo.save(inquiry);
 			
 			Question question = new Question();

@@ -12,9 +12,9 @@ import com.ohjelmistoprojekti.kysely.models.MakerAnswer;
 @RepositoryRestResource
 public interface MakerAnswerRepository extends CrudRepository<MakerAnswer, Long> {
 
-	// FETCH FROM SPECIFIC USER
+	// FETCH ANSWERS FROM SPECIFIC USER
 	List<MakerAnswer> findByMaker(@Param("maker") Maker maker);
 	
-	// FETCH EVERYTHING EXCEPT SPECIFIC USER
+	// FETCH ANWERTS EXCEPT SPECIFIC USER
 	List<MakerAnswer> findByMakerIsNot(@Param("maker") Maker maker);
 }

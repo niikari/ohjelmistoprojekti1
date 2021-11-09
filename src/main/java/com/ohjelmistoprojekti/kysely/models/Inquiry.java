@@ -29,4 +29,10 @@ public class Inquiry {
 	@OneToMany(mappedBy="inquiry")
 	private List<Question> questions = new ArrayList<>();
 	
+	private String name;
+	
+	// VOISI LAITTAA MYÖS PÄIVÄN KOSKA TEHTY
+	
+	// VOISI LAITTAA MYÖS PÄIVÄN KOSKA MUOKATTU
+	
 }
