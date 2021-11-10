@@ -7,12 +7,14 @@ import org.springframework.context.annotation.Bean;
 
 import com.ohjelmistoprojekti.kysely.models.Answer;
 import com.ohjelmistoprojekti.kysely.models.Inquiry;
-import com.ohjelmistoprojekti.kysely.models.Maker;
 import com.ohjelmistoprojekti.kysely.models.Question;
+import com.ohjelmistoprojekti.kysely.models.User;
 import com.ohjelmistoprojekti.kysely.repos.AnswerRepository;
 import com.ohjelmistoprojekti.kysely.repos.InquiryRepository;
 import com.ohjelmistoprojekti.kysely.repos.MakerRepository;
 import com.ohjelmistoprojekti.kysely.repos.QuestionRepository;
+import com.ohjelmistoprojekti.kysely.repos.UserRepository;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
 public class KyselyApplication {
@@ -23,7 +25,7 @@ public class KyselyApplication {
 
 	@Bean
 	public CommandLineRunner demo(InquiryRepository inqRepo, QuestionRepository quesRepo, AnswerRepository ansRepo,
-			MakerRepository makerRepository) {
+			MakerRepository makerRepository, UserRepository userRepository) {
 		return (args) -> {
 						
 			Inquiry inquiry = new Inquiry();
@@ -112,6 +114,11 @@ public class KyselyApplication {
 			ans10.setValue(5);
 			ansRepo.save(ans10);
 			
+			User user = new User();
+			user.setUsername("admin");
+			user.setPassword(new BCryptPasswordEncoder().encode("admin"));
+			user.setRole("admin");
+			userRepository.save(user);
 		};
 
 	}
