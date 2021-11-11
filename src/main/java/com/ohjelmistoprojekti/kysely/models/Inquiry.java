@@ -3,6 +3,7 @@ package com.ohjelmistoprojekti.kysely.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,6 +30,7 @@ public class Inquiry {
 	@OneToMany(mappedBy="inquiry")
 	private List<Question> questions = new ArrayList<>();
 	
+	@Column(unique=true)
 	private String name;
 	
 	// VOISI LAITTAA MYÖS PÄIVÄN KOSKA TEHTY

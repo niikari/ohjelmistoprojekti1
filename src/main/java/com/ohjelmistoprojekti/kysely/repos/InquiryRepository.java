@@ -6,4 +6,5 @@ import com.ohjelmistoprojekti.kysely.models.Inquiry;
 
 public interface InquiryRepository extends CrudRepository<Inquiry, Long> {
 
+	Inquiry findByName(String name);
 }

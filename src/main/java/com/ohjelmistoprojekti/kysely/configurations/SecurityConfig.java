@@ -31,6 +31,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
      http.csrf().disable().cors().and().authorizeRequests()
       .antMatchers(HttpMethod.POST, "/login").permitAll()
+      .antMatchers(HttpMethod.GET, "/api", "/api/**").permitAll()
+      .antMatchers(HttpMethod.POST, "/api/makerAnswers").permitAll()
+      .antMatchers(HttpMethod.POST, "/api/makers").permitAll()
           .anyRequest().authenticated()
           .and()
           // Filter for the api/login requests
@@ -53,7 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         UrlBasedCorsConfigurationSource source = 
             new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(Arrays.asList("*"));
+        config.setAllowedOrigins(Arrays.asList("http://localhost:3000/", "http://kyselyfrontend.herokuapp.com/"));
         config.setAllowedMethods(Arrays.asList("*"));
         config.setAllowedHeaders(Arrays.asList("*"));
         config.setAllowCredentials(true);
