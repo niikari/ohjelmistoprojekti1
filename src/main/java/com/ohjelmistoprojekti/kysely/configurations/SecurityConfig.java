@@ -33,6 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       .antMatchers(HttpMethod.POST, "/login").permitAll()
       // TÄMÄ PITÄÄ MUOKATA LOPUKSI NIIN ETTEI KÄYTTÄJIÄ (USERS TAI MAKERS) PÄÄSE HAKEMAAN
       .antMatchers(HttpMethod.GET, "/api", "/api/**").permitAll()
+      .antMatchers(HttpMethod.GET, "/reports", "/reports/**").permitAll()
       .antMatchers(HttpMethod.POST, "/api/makerAnswers").permitAll()
       .antMatchers(HttpMethod.POST, "/api/makers").permitAll()
           .anyRequest().authenticated()
