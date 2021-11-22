@@ -47,13 +47,13 @@ public class KyselyApplication {
 			Answer ans2 = new Answer();
 			ans2.setAnswer("Toinen vastaus");
 			ans2.setQuestion(question);
-			ans2.setValue(3);
+			ans2.setValue(1);
 			ansRepo.save(ans2);
 			
 			Answer ans3 = new Answer();
 			ans3.setAnswer("Kolmas vastaus");
 			ans3.setQuestion(question);
-			ans3.setValue(5);
+			ans3.setValue(1);
 			ansRepo.save(ans3);
 			
 			Question question2 = new Question();
@@ -70,13 +70,13 @@ public class KyselyApplication {
 			Answer ans5 = new Answer();
 			ans5.setAnswer("Toisen kysymyksen toinen vastaus");
 			ans5.setQuestion(question2);
-			ans5.setValue(3);
+			ans5.setValue(1);
 			ansRepo.save(ans5);
 			
 			Answer ans6 = new Answer();
 			ans6.setAnswer("Toisen kysymyksen kolmas vastaus");
 			ans6.setQuestion(question2);
-			ans6.setValue(5);
+			ans6.setValue(1);
 			ansRepo.save(ans6);
 			
 			Question question3 = new Question();
@@ -106,13 +106,13 @@ public class KyselyApplication {
 			Answer ans9 = new Answer();
 			ans9.setAnswer("Kolmannen kysymyksen toinen vastaus");
 			ans9.setQuestion(question4);
-			ans9.setValue(3);
+			ans9.setValue(1);
 			ansRepo.save(ans9);
 			
 			Answer ans10 = new Answer();
 			ans10.setAnswer("Kolmannen kysymyksen kolmas vastaus");
 			ans10.setQuestion(question4);
-			ans10.setValue(5);
+			ans10.setValue(1);
 			ansRepo.save(ans10);
 			
 			User user = new User();

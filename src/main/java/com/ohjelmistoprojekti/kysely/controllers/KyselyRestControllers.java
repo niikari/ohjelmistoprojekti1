@@ -18,13 +18,6 @@ public class KyselyRestControllers {
 	@Autowired
 	private MakerAnswerRepository makerAnswerRepository;
 	
-	
-	@GetMapping("/reports")
-	public List<MakerAnswer> getReports() {
-		
-		return (List<MakerAnswer>) makerAnswerRepository.findAll();
-	}
-	
 	@GetMapping("/reports/{id}")
 	public List<MakerAnswer> getReportsByInquiry(@PathVariable Long id) {
 		List<MakerAnswer> modAnswers = new ArrayList<>();		
@@ -34,9 +27,10 @@ public class KyselyRestControllers {
 			if (ans.getAnswer().getQuestion().getInquiry().getId() == id) {
 				modAnswers.add(ans);
 			}
-		}		
-		
+		}
+				
 		return modAnswers;
+		
 	}
 		
 }
