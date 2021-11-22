@@ -3,6 +3,7 @@ package com.ohjelmistoprojekti.kysely.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Inquiry {
 	private Long id;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy="inquiry")
+	@OneToMany(mappedBy="inquiry", cascade=CascadeType.REMOVE)
 	private List<Question> questions = new ArrayList<>();
 	
 	@Column(unique=true)
