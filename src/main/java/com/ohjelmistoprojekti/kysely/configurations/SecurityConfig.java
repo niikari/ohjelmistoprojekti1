@@ -32,8 +32,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      http.csrf().disable().cors().and().authorizeRequests()
       .antMatchers(HttpMethod.POST, "/login").permitAll()
       // TÄMÄ PITÄÄ MUOKATA LOPUKSI NIIN ETTEI KÄYTTÄJIÄ (USERS TAI MAKERS) PÄÄSE HAKEMAAN
-      .antMatchers(HttpMethod.GET, "/api", "/api/**").permitAll()
-      .antMatchers(HttpMethod.GET, "/reports", "/reports/**").permitAll()
+      //.antMatchers(HttpMethod.GET, "/api", "/api/**").permitAll()
+      .antMatchers(HttpMethod.GET, "/api/inquiries", "/api/inquiries/**").permitAll()
+      .antMatchers(HttpMethod.GET, "/api/answers", "/api/answers/**").permitAll()
+      .antMatchers(HttpMethod.GET, "/api/questions", "/api/questions/**").permitAll()
+      //.antMatchers(HttpMethod.GET, "/reports", "/reports/**").permitAll()
       .antMatchers(HttpMethod.POST, "/api/makerAnswers").permitAll()
       .antMatchers(HttpMethod.POST, "/api/makers").permitAll()
           .anyRequest().authenticated()
