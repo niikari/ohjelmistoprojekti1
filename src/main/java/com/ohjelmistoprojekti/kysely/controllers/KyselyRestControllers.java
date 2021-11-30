@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ohjelmistoprojekti.kysely.models.MakerAnswer;
 import com.ohjelmistoprojekti.kysely.repos.MakerAnswerRepository;
+import com.ohjelmistoprojekti.kysely.repos.MakerRepository;
 
 
 @RestController
@@ -17,6 +18,9 @@ public class KyselyRestControllers {
 	
 	@Autowired
 	private MakerAnswerRepository makerAnswerRepository;
+	
+	@Autowired
+	private MakerRepository makerRepository;
 	
 	@GetMapping("/reports/{id}")
 	public List<MakerAnswer> getReportsByInquiry(@PathVariable Long id) {
@@ -32,5 +36,19 @@ public class KyselyRestControllers {
 		return modAnswers;
 		
 	}
+	
+	@GetMapping("/makeranswers/{id}")
+	public List<MakerAnswer> getReportsByInquiryAndMaker(@PathVariable Long id) {
+		List<MakerAnswer> answers = makerAnswerRepository.findByMaker(makerRepository.findById(id).get());
 		
+		return answers;
+	}
+	
 }
+
+
+
+
+
+
+
