@@ -7,6 +7,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 import com.ohjelmistoprojekti.kysely.models.Answer;
 import com.ohjelmistoprojekti.kysely.models.Inquiry;
+import com.ohjelmistoprojekti.kysely.models.Maker;
 import com.ohjelmistoprojekti.kysely.models.Question;
 
 @Component
@@ -14,6 +15,6 @@ public class RestConfig implements RepositoryRestConfigurer {
 
 	@Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
-        config.exposeIdsFor(Inquiry.class, Question.class, Answer.class);
+        config.exposeIdsFor(Inquiry.class, Question.class, Answer.class, Maker.class);
     }
 }
