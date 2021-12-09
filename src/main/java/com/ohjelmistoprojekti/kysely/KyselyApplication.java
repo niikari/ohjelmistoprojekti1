@@ -23,7 +23,7 @@ public class KyselyApplication {
 		SpringApplication.run(KyselyApplication.class, args);
 	}
 
-	/*
+	
 	@Bean
 	public CommandLineRunner demo(InquiryRepository inqRepo, QuestionRepository quesRepo, AnswerRepository ansRepo,
 			MakerRepository makerRepository, UserRepository userRepository) {
@@ -122,5 +122,6 @@ public class KyselyApplication {
 			userRepository.save(user);
 		};
 
-	}*/
+	}
+	
 }
