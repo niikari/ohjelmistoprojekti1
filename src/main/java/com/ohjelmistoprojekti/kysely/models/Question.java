@@ -30,12 +30,11 @@ public class Question {
 	private Long id;
 	
 	private String quest;
-	
+
 	private Boolean multipleAnswers = false;
 	private Boolean openQuestion = false;
 	private Boolean normQuestion = true;
-	
-	
+		
 	@ManyToOne
 	private Inquiry inquiry;
 	
