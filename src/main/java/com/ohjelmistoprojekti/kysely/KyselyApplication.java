@@ -28,7 +28,7 @@ public class KyselyApplication {
 	public CommandLineRunner demo(InquiryRepository inqRepo, QuestionRepository quesRepo, AnswerRepository ansRepo,
 			MakerRepository makerRepository, UserRepository userRepository) {
 		return (args) -> {
-			
+			/*
 			Inquiry inquiry = new Inquiry();
 			inquiry.setName("Ensimmäinen kysely");
 			inqRepo.save(inquiry);
@@ -120,6 +120,7 @@ public class KyselyApplication {
 			user.setPassword(new BCryptPasswordEncoder().encode("admin"));
 			user.setRole("admin");
 			userRepository.save(user);
+			*/
 		};
 
 	}
